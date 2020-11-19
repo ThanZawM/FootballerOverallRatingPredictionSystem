@@ -23,13 +23,13 @@
 ![image](Footballer_Overall_Rating_Prediction_System/images/p1.png)
 
 
-![image](Footballer_Overall_Rating_Prediction_System/images/p2.png)
+![image](images/p2.png)
 
 
-![image](Footballer_Overall_Rating_Prediction_System/images/p3.png)
+![image](images/p3.png)
 
 
-![image](Footballer_Overall_Rating_Prediction_System/images/p4.png)
+![image](images/p4.png)
 
 
-![image](Footballer_Overall_Rating_Prediction_System/images/p5.png)
+![image](images/p5.png)
