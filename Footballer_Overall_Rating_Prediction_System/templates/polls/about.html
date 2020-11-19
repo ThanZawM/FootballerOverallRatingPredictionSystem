@@ -1,0 +1,59 @@
+
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+{# jQuery #}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<body class="bg">
+        <div _ngcontent-c7 id="content" >
+        <nav class="navbar navbar-expand-lg" style="background: rgba(0, 0, 0, 0);">
+        {# <a class="navbar-brand" href=""><img src="{% static 'image/messi.jpg' %}" style="height: 60px; width: 60px; " alt=""></a> #}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                   <button type="button" class="btn btn-outline-info" onclick="location.href='{% url 'football' %}'" >Home</button>
+                </li>
+                &nbsp
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-info" onclick="location.href='{% url 'rmse' %}'">RMSE</button>
+                </li>
+                &nbsp
+                 <li class="nav-item">
+                    <button type="button" class="btn btn-outline-info" onclick="location.href='{% url 'about' %}'">About</button>
+                </li>
+                &nbsp;
+
+            </ul>
+
+        </div>
+    </nav>
+            <br>
+            <br>
+            <div  class="tag-line" >
+         <div class="container">
+           <div class="row  text-center" >
+               <div class="col-lg-12  col-md-12 col-sm-12">
+                    <h1 data-scroll-reveal="enter from the bottom after 0.1s" style="color: green;"> ABOUT </h1>
+                    <br>
+                    <br>
+		    <p style="text-align: justify">
+			Prediction is a statement of an uncertain event which uses past data, analyzes it and predicts the future. Football is the most popular
+			sport in the world. In a football match, rating of each player is very important and can be used in football games. In this thesis, multiple
+			linear regression model, k nearest neighbors regression model and decision tree regression model are used to predict overall rating of
+			footballers by gathering 34 features that affect the outcome. The models are built by using training data of 2007-2016 football dataset. As
+			the system performs numerical prediction, we use the regression model for prediction and can measure that the model is good or not by comparing
+			root mean squared error. The system yielded 2.80, 1.50 and 1.38 of root mean squared error for multiple linear regression model, k nearest
+			neighbors regression model and decision tree regression model respectively.
+		    </p>
+               </div>
+           </div>
+         </div>
+</div>
+</body>

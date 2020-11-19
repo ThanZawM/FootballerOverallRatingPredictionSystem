@@ -1,0 +1,100 @@
+{% load static %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+{# jQuery #}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<body class="bg">
+        <div _ngcontent-c7 id="content" >
+        <nav class="navbar navbar-expand-lg" style="background: rgba(0, 0, 0, 0);">
+        {# <a class="navbar-brand" href=""><img src="{% static 'image/messi.jpg' %}" style="height: 60px; width: 60px; " alt=""></a> #}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+        <div id="navbarNavDropdown" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                   <button type="button" class="btn btn-outline-info" onclick="location.href='{% url 'football' %}'" >Home</button>
+                </li>
+                &nbsp
+                <li class="nav-item">
+                    <button type="button" class="btn btn-outline-info" onclick="location.href='{% url 'rmse' %}'">RMSE</button>
+                </li>
+                &nbsp
+                 <li class="nav-item">
+                    <button type="button" class="btn btn-outline-info" onclick="location.href='{% url 'about' %}'">About</button>
+                </li>
+                &nbsp;
+
+            </ul>
+
+        </div>
+    </nav>
+            <br>
+            <br>
+        <div  class="tag-line" >
+         <div class="container">
+           <div class="row  text-center" >
+               <div class="col-lg-12  col-md-12 col-sm-12">
+                    <h1 data-scroll-reveal="enter from the bottom after 0.1s" style="color: green;"> FOOTBALLER OVERALL RATING PREDICTION SYSTEM </h1>
+               </div>
+           </div>
+         </div>
+
+    </div>
+
+<div id="info-sec" class="container set-pad" style="margin-top: 30px; margin-bottom: 30px">
+    <div style="align-items: center;">
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <div class="active-cyan-3 active-cyan-4 mb-4" style="align-content: center; color: white;">
+                 <center>{{ form.player_name }}</center>
+            </div>
+            <center>
+                <button type="submit" class="btn btn-success" >Predict</button>
+            </center>
+        </form>
+
+    </div>
+</div>
+            {% if player_name %}
+                <center><button type="button" class="btn btn-warning" onclick="location.href='{% url 'football' %}'">Clear</button> </center>
+    <div  class="tag-line" style="margin-top: 80px" >
+         <div class="container">
+           <div class="row  text-center" >
+               <div class="col-lg-12  col-md-12 col-sm-12">
+                   <center>
+                   <table>
+                        <tr><h2 data-scroll-reveal="enter from the bottom after 0.1s" style="color: green;" > FOOTBALLER OVERALL RATING </h2></tr>
+                       <tr><td><h3 >Player Name</h3></td> <td align="center"><h3>{{ player_name }}</h3></td></tr>
+                       <tr><td><h3 >Actual Result</h3></td><td align="center"><h3>{{ acut }} </h3></td></tr>
+                       <tr><td><h3 >Multiple Linear Regression</h3></td> <td align="center"><h3>{{ lin }} </h3></td></tr>
+                       <tr><td><h3 >K-Nearest Neighbors Regression</h3></td> <td align="center"><h3>{{ knn }} </h3></td></tr>
+                       <tr><td><h3 >Decision Tree Regression</h3></td> <td align="center"><h3>{{ dt }}</h3></td></tr>
+                   </table>
+                   </center>
+               </div>
+           </div>
+         </div>
+    </div>
+    <div  class="tag-line" style="margin-top: 50px" >
+         <div class="container">
+           <div class="row  text-center" >
+               <div class="col-lg-12  col-md-12 col-sm-12">
+                    <h2 data-scroll-reveal="enter from the bottom after 0.1s" style="color: green;"> FOOTBALLER OVERALL RATING WITH PLOT </h2>
+                    <img src="{% static 'image/linear.png' %}" style="height: 277px; width: 372px; " alt="">
+                   <img src="{% static 'image/knn.png' %}" style="height: 277px; width: 372px; " alt="">
+                   <img src="{% static 'image/dtree.png' %}" style="height: 277px; width: 372px; " alt="">
+                   <img src="{% static 'image/r2score.png' %}" style="height: 277px; width: 372px; " alt="">
+               </div>
+           </div>
+         </div>
+    </div>
+                {% else %}
+               <center><h3 style="color: red">{{ error }}</h3></center>
+            {% endif %}
+</div>
+</body>
