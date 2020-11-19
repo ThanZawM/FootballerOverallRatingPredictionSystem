@@ -19,3 +19,17 @@
 - The system is developed by Python.​
 
 ## Sample usage
+
+![image](Footballer_Overall_Rating_Prediction_System/images/p1.png)
+
+
+![image](Footballer_Overall_Rating_Prediction_System/images/p2.png)
+
+
+![image](Footballer_Overall_Rating_Prediction_System/images/p3.png)
+
+
+![image](Footballer_Overall_Rating_Prediction_System/images/p4.png)
+
+
+![image](Footballer_Overall_Rating_Prediction_System/images/p5.png)
